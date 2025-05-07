@@ -1,0 +1,21 @@
+<div class="row" *ngIf="userData.length>0; else noUser">
+    <div class="col-md-12">
+        <div class="card mb-5" *ngFor="let user of userData">
+            <div class="card-header">
+                <h2>{{user.userName}}</h2>
+            </div>
+            <div class="card-body">
+                <p>Email of User:{{user.email}}</p>
+                <p>is Subscribed : {{user.checkbox}}</p>
+                <p>Mode of Contact : {{user.modofContact}}</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-primary mr-3">Edit</button>
+                <button class="btn btn-sm btn-danger">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #noUser>
+    <p class="alert alert-danger">No User Data</p>
+</ng-template>
